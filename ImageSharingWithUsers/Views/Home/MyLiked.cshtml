@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "MyLiked";
+}
+@using ImageSharing.Data;
+@using ImageSharingWithUsers.Models;
+@model MyLikedViewModel
+<a class="btn btn-primary" href="/">Home</a>
+<table class="table table-hover table-bordered table-striped">
+    <tr>
+        <td>Image</td>
+        <td>Description</td>
+        <td>Date Uploaded</td>
+    </tr>
+    @foreach(Image i in Model.MyLikedImages)
+    {
+        <tr>
+            <td><img src="~/Images/@i.FileName" style="height:200px; width:150px;" /> </td>
+            <td>@i.Description</td>
+            <td>@i.Date</td>
+        </tr>
+    }
+</table>

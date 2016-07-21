@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageSharingWithUsers", "ImageSharingWithUsers\ImageSharingWithUsers.csproj", "{0C12B843-F1C2-41A8-BEB9-10D9FCBD9761}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserAuth.Data", "UserAuth.Data\UserAuth.Data.csproj", "{22869863-059A-4C89-AFA1-1A8B0438D78F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageSharing.Data", "ImageSharing.Data\ImageSharing.Data.csproj", "{FB10F5EB-10F3-49EF-919A-EAC97FD12484}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C12B843-F1C2-41A8-BEB9-10D9FCBD9761}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C12B843-F1C2-41A8-BEB9-10D9FCBD9761}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C12B843-F1C2-41A8-BEB9-10D9FCBD9761}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C12B843-F1C2-41A8-BEB9-10D9FCBD9761}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22869863-059A-4C89-AFA1-1A8B0438D78F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22869863-059A-4C89-AFA1-1A8B0438D78F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22869863-059A-4C89-AFA1-1A8B0438D78F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22869863-059A-4C89-AFA1-1A8B0438D78F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB10F5EB-10F3-49EF-919A-EAC97FD12484}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB10F5EB-10F3-49EF-919A-EAC97FD12484}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB10F5EB-10F3-49EF-919A-EAC97FD12484}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB10F5EB-10F3-49EF-919A-EAC97FD12484}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

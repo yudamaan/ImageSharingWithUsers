@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Image";
+}
+
+@using ImageSharing.Data;
+@using ImageSharingWithUsers.Models;
+@model ImageViewModel
+<a class="btn btn-primary" href="/">Home</a>
+<div style="margin-top:100px;" class="row">
+    <img id="image" data-image-id="@Model.Image.Id" src="~/Images/@Model.Image.FileName" height="450" width="400" class="col-md-offset-4 well" />
+    @if (User.Identity.IsAuthenticated && !Model.Liked)
+    {
+        <div id="user" data-user-id="@Model.User.Id" class="col-md-1 col-md-offset-6">
+            <button class="glyphicon glyphicon-heart btn btn-primary" id="like-button">Like</button>
+        </div>
+        
+    }
+    <p id="likes">@Model.LikesCount Likes</p>
+    <p class="col-md-2 col-md-offset-5" style="text-align:center;">@Model.Image.Views Views</p>
+     
+</div>
+<div class="row">
+    <h3 class="col-md-5 col-md-offset-3" style="text-align:center">@Model.Image.Description</h3>
+</div>
+@section Scripts{
+    
+<script src="~/Scripts/Image.js"></script>
+    }
+
+
+
+
+

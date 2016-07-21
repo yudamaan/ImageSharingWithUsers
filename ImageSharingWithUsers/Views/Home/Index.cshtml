@@ -1,0 +1,90 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@using ImageSharing.Data;
+@using ImageSharingWithUsers.Models
+@model IndexViewModel
+@if (User.Identity.IsAuthenticated)
+{
+    <h3 style="text-align:center">Welcome Back @Model.User.Username <a href="/home/myliked?id=@Model.User.Id">click here</a> to see your liked images</h3>
+}
+
+<div class="row well">
+    <form method="post" action="/home/upload" enctype="multipart/form-data">
+        <div class="col-md-6 col-md-offset-3">
+            <input type="text" name="description" id="description" placeholder="Description" class="form-control" />
+            <br />
+        </div>
+        <br />
+        <div class="col-md-6 col-md-offset-3">
+            <input type="file" name="image" class="form-control" id="file">
+            <br />
+        </div>
+        <div class="row">
+            <button class="col-md-2 col-md-offset-5 btn btn-primary" id="upload">Upload</button>
+        </div>
+    </form>
+    @if (!string.IsNullOrEmpty(Model.Url))
+    {
+        <div class="row">
+            <br />
+            <h3 style="text-align:center;">Share:</h3>
+            <input type="text" class="form-control" value="@Model.Url" placeholder="Url" />
+        </div>
+    }
+</div>
+
+
+<div class="row">
+    <h3 class="col-md-2 col-md-offset-5">Most Recent</h3>
+</div>
+<div class="row">
+    @foreach (Image i in Model.MostRecent)
+    {
+        <div class="col-md-2 well" style="margin-left:25px;">
+            <a href="~/home/image?id=@i.Id" height="200" width="150">
+                <img data-image-id="@i.Id" class="image" src="~/Images/@i.FileName" height="200" width="150" />
+            </a>
+            <p style="text-align:center" data-image-id="@i.Id" class="views">@i.Views Views</p>
+        </div>
+    }
+</div>
+<div class="row">
+    <h3 class="col-md-2 col-md-offset-5">Most Viewed</h3>
+</div>
+<div class="row">
+    @foreach (Image i in Model.MostViewed)
+    {
+        <div class="col-md-2 well" style="margin-left:25px;">
+            <a href="/home/image?id=@i.Id">
+                <img src="~/Images/@i.FileName" data-image-id="@i.Id" class="image" height="200" width="150" />
+            </a>
+            <p style="text-align:center" data-image-id="@i.Id" class="views">@i.Views Views</p>
+        </div>
+
+    }
+</div>
+<div class="row">
+    <h3 class="col-md-2 col-md-offset-5">Most Liked</h3>
+</div>
+<div class="row">
+    @foreach (ImageWithLikes i in Model.MostLiked)
+    {
+        <div class="col-md-2 well" style="margin-left:25px;">
+            <a href="/home/image?id=@i.Image.Id">
+                <img src="~/Images/@i.Image.FileName" data-image-id="@i.Image.Id" class="image" height="200" width="150" />
+            </a>
+            <p style="text-align:center" data-image-id="@i.Image.Id" class="views">@i.Image.Views Views</p>
+            <p style="text-align:center">@i.LikesCount Likes</p>
+        </div>
+
+    }
+</div>
+
+
+
+@section Scripts{
+    <script src="~/Scripts/Index.js"></script>
+
+}
